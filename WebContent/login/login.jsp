@@ -32,7 +32,8 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w">
+				<!--  Form will be used to send data to the back-end service -->
+				<form class="login100-form validate-form flex-sb flex-w" action="../LoginAPI" method="POST"">
 					<span class="login100-form-title p-b-32">
 						Account Login
 					</span>
@@ -72,7 +73,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button id="myLogin" class="login100-form-btn">
+						<button name="Login" class="login100-form-btn" type="submit">
 							Login
 						</button>
 					</div>

@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" import="org.elluck91.munchies.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +65,7 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">USD <i class="fa fa-caret-down"></i></a>
 							<ul class="custom-menu">
 								<li><a href="#">USD ($)</a></li>
-								<li><a href="#">EUR (€)</a></li>
+								<li><a href="#">EUR (â¬)</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -113,12 +114,12 @@
 								</div>
 								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="./login/login.html" class="text-uppercase">Login</a> / <a href="./register/register.html" class="text-uppercase">Join</a>
+							<a href="./login/login.jsp" class="text-uppercase">Login</a> / <a href="./register/register.jsp" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./login/login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./register/register.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="./checkout.jsp"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="./login/login.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./register/register.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -197,7 +198,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="./beverages.html">
+											<a class="banner banner-1" href="./beverages.jsp">
 												<img src="./img/drinks.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -214,11 +215,11 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="./baking.html">
+											<a class="banner banner-1" href="./baking.jsp">
 												<img src="./img/cupcake.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn" href="./baking.html">VIEW ALL</button>
+													<button class="primary-btn" href="./baking.jsp">VIEW ALL</button>
 												</div>
 											</a>
 										</div>
@@ -231,7 +232,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="breakfast.html">
+											<a class="banner banner-1" href="breakfast.jsp">
 												<img src="./img/cereal.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -248,7 +249,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="frozenfood.html">
+											<a class="banner banner-1" href="frozenfood.jsp">
 												<img src="./img/ben.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -265,7 +266,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="grain.html">
+											<a class="banner banner-1" href="grain.jsp">
 												<img src="./img/pasta.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -282,7 +283,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="produce.html">
+											<a class="banner banner-1" href="produce.jsp">
 												<img src="./img/produce.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -302,7 +303,7 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="./index.html">Home</a></li>
+						<li><a href="./index.jsp">Home</a></li>
 						<li><a href="#">Shop</a></li>
 					</ul>
 				</div>
