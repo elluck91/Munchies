@@ -10,7 +10,7 @@
 	<!-- Tab Icon-->
 	<link rel = "icon" href = "./img/MunchiesLogo.jpg">
 	
-	<title>Produce</title>
+	<title>Frozen Food</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -97,7 +97,7 @@
 								<option value="1">Beverages</option>
 								<option value="1">Baking</option>
 								<option value="1">Breakfast & Cereal</option>
-								<option value="1">Frozen Food</option
+								<option value="1">Frozen Food</option>
 								<option value="1">Meat</option>
 								<option value="1">Produce</option>
 							</select>
@@ -403,7 +403,7 @@
 											<span class="sale">-20%</span>
 										</div>
 										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/fresh/fresh1.jpeg" alt="">
+										<img src="./foodimg/frozenfood/frozen1.jpeg" alt="">
 									</div>
 									<div class="product-body">
 										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
@@ -414,7 +414,7 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star-o empty"></i>
 										</div>
-										<h2 class="product-name"><a href="#">Blackberries</a></h2>
+										<h2 class="product-name"><a href="#">Birds Eye Steamfresh Select Super Sweet Corn</a></h2>
 										<div class="product-btns">
 											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -430,7 +430,7 @@
 								<div class="product product-single">
 									<div class="product-thumb">
 										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/fresh/fresh2.jpeg" alt="">
+										<img src="./foodimg/frozenfood/frozen2.jpeg" alt="">
 									</div>
 									<div class="product-body">
 										<h3 class="product-price">$32.50</h3>
@@ -441,7 +441,7 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star-o empty"></i>
 										</div>
-										<h2 class="product-name"><a href="#">Raspberries</a></h2>
+										<h2 class="product-name"><a href="#">kellogg's® Eggo® Chocolatey Chip Waffles</a></h2>
 										<div class="product-btns">
 											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -463,7 +463,7 @@
 											<span class="sale">-20%</span>
 										</div>
 										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/fresh/fresh3.jpeg" alt="">
+										<img src="./foodimg/frozenfood/frozen3.jpeg" alt="">
 									</div>
 									<div class="product-body">
 										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
@@ -474,7 +474,7 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star-o empty"></i>
 										</div>
-										<h2 class="product-name"><a href="#">Green Bell Pepper</a></h2>
+										<h2 class="product-name"><a href="#"> DIGIORNO® Original Rising Crust Pepperoni</a></h2>
 										<div class="product-btns">
 											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -487,96 +487,6 @@
 
 							<div class="clearfix visible-md visible-lg"></div>
 
-							<!-- Product Single -->
-							<div class="col-md-4 col-sm-6 col-xs-6">
-								<div class="product product-single">
-									<div class="product-thumb">
-										<div class="product-label">
-											<span>New</span>
-											<span class="sale">-20%</span>
-										</div>
-										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/fresh/fresh4.jpeg" alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o empty"></i>
-										</div>
-										<h2 class="product-name"><a href="#">Red Bell Pepper</a></h2>
-										<div class="product-btns">
-											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-											<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
-
-							<!-- Product Single -->
-							<div class="col-md-4 col-sm-6 col-xs-6">
-								<div class="product product-single">
-									<div class="product-thumb">
-										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/fresh/fresh5.jpeg" alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="product-price">$32.50</h3>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o empty"></i>
-										</div>
-										<h2 class="product-name"><a href="#">Broccoli</a></h2>
-										<div class="product-btns">
-											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-											<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
-
-							<div class="clearfix visible-sm visible-xs"></div>
-
-							<!-- Product Single -->
-							<div class="col-md-4 col-sm-6 col-xs-6">
-								<div class="product product-single">
-									<div class="product-thumb">
-										<div class="product-label">
-											<span>New</span>
-											<span class="sale">-20%</span>
-										</div>
-										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/fresh/fresh6.jpeg" alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o empty"></i>
-										</div>
-										<h2 class="product-name"><a href="#">Cauliflower</a></h2>
-										<div class="product-btns">
-											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-											<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
 							
 						</div>
 						<!-- /row -->

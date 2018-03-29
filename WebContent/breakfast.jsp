@@ -97,7 +97,7 @@
 								<option value="1">Beverages</option>
 								<option value="1">Baking</option>
 								<option value="1">Breakfast & Cereal</option>
-								<option value="1">Frozen Food</option
+								<option value="1">Frozen Food</option>
 								<option value="1">Meat</option>
 								<option value="1">Produce</option>
 							</select>

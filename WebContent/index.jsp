@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" import="org.elluck91.munchies.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	
-	<!-- Tab Icon-->
 	<link rel = "icon" href = "./img/MunchiesLogo.jpg">
-	
-	<title>Frozen Food</title>
+	<title>Munchies</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -67,7 +65,7 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">USD <i class="fa fa-caret-down"></i></a>
 							<ul class="custom-menu">
 								<li><a href="#">USD ($)</a></li>
-								<li><a href="#">EUR (€)</a></li>
+								<li><a href="#">EUR (â¬)</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -82,7 +80,7 @@
 				<div class="pull-left">
 					<!-- Logo -->
 					<div class="header-logo">
-						<a class="logo" href="./index.html">
+						<a class="logo" href="#">
 							<img src="./img/MunchiesLogoCrop.jpg" alt="">
 						</a>
 					</div>
@@ -97,8 +95,8 @@
 								<option value="1">Beverages</option>
 								<option value="1">Baking</option>
 								<option value="1">Breakfast & Cereal</option>
-								<option value="1">Frozen Food</option
-								<option value="1">Meat</option>
+								<option value="1">Frozen Food</option>
+								<option value="1">Grains & Pasta</option>
 								<option value="1">Produce</option>
 							</select>
 							<button class="search-btn"><i class="fa fa-search"></i></button>
@@ -116,12 +114,21 @@
 								</div>
 								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="./login/login.html" class="text-uppercase">Login</a> / <a href="./register/register.html" class="text-uppercase">Join</a>
+<<<<<<< HEAD:WebContent/index.html
+							<a href="./log.html" class="text-uppercase">Login</a> / <a href="./reg.html" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./login/login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./register/register.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="./log.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./reg.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+=======
+							<a href="./login/login.jsp" class="text-uppercase">Login</a> / <a href="./register/register.jsp" class="text-uppercase">Join</a>
+							<ul class="custom-menu">
+								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+								<li><a href="./checkout.jsp"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="./login/login.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./register/register.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+>>>>>>> upstream/master:WebContent/index.jsp
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -145,7 +152,7 @@
 												<img src="./img/thumb-product01.jpg" alt="">
 											</div>
 											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+												<h3 class="product-price"># <span class="qty">#</span></h3>
 												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
 											</div>
 											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
@@ -155,7 +162,7 @@
 												<img src="./img/thumb-product01.jpg" alt="">
 											</div>
 											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+												<h3 class="product-price">#<span class="qty">#</span></h3>
 												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
 											</div>
 											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
@@ -190,7 +197,7 @@
 		<div class="container">
 			<div id="responsive-nav">
 				<!-- category nav -->
-				<div class="category-nav show-on-click">
+				<div>
 					<div class="category-nav">
 						<span class="category-header">Categories <i class="fa fa-list"></i></span>
 						<ul class="category-list">
@@ -200,7 +207,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="./beverages.html">
+											<a class="banner banner-1" href="./beverages.jsp">
 												<img src="./img/drinks.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -217,11 +224,11 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="./baking.html">
+											<a class="banner banner-1" href="./baking.jsp">
 												<img src="./img/cupcake.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn" href="./baking.html">VIEW ALL</button>
+													<button class="primary-btn" href="./baking.jsp">VIEW ALL</button>
 												</div>
 											</a>
 										</div>
@@ -234,7 +241,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="breakfast.html">
+											<a class="banner banner-1" href="breakfast.jsp">
 												<img src="./img/cereal.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -251,7 +258,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="frozenfood.html">
+											<a class="banner banner-1" href="frozenfood.jsp">
 												<img src="./img/ben.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -268,7 +275,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="grain.html">
+											<a class="banner banner-1" href="grain.jsp">
 												<img src="./img/pasta.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -285,7 +292,7 @@
 									<div class="row hidden-sm hidden-xs">
 										<div class="col-md-12">
 											<hr>
-											<a class="banner banner-1" href="produce.html">
+											<a class="banner banner-1" href="produce.jsp">
 												<img src="./img/produce.jpg" alt="">
 												<div class="banner-caption text-center">
 													<h2 class="white-color">NEW COLLECTION</h2>
@@ -305,7 +312,7 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="./index.html">Home</a></li>
+						<li><a href="./index.jsp">Home</a></li>
 						<li><a href="#">Shop</a></li>
 					</ul>
 				</div>
@@ -316,16 +323,52 @@
 	</div>
 	<!-- /NAVIGATION -->
 
-	<!-- BREADCRUMB -->
-	<div id="breadcrumb">
+	<!-- HOME -->
+	<div id="home">
+		<!-- container -->
 		<div class="container">
-			<ul class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Products</li>
-			</ul>
+			<!-- home wrap -->
+			<div class="home-wrap">
+				<!-- home slick -->
+				<div id="home-slick">
+					<!-- banner -->
+					<div class="banner banner-1">
+						<img src="./img/foodbanner1.jpeg" alt="">
+						<div class="banner-caption text-center">
+							<h1 class = "white-color">Produce sale</h1>
+							<h1 class="white-color font-weak">Up to 50% OFF</h1>
+							<button class="primary-btn">Shop Now</button>
+						</div>
+					</div>
+					<!-- /banner -->
+
+					<!-- banner -->
+					<div class="banner banner-1">
+						<img src="./img/foodbanner2.jpg" alt="">
+						<div class="banner-caption text-center">
+							<h1 class="white-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF</span></h1>
+							<button class="primary-btn">Shop Now</button>
+						</div>
+					</div>
+					<!-- /banner -->
+
+					<!-- banner -->
+					<div class="banner banner-1">
+						<img src="./img/foodbanner3.jpg" alt="">
+						<div class="banner-caption text-center">
+							<h1 class="white-color">New Product <span>Collection</span></h1>
+							<button class="primary-btn">Shop Now</button>
+						</div>
+					</div>
+					<!-- /banner -->
+				</div>
+				<!-- /home slick -->
+			</div>
+			<!-- /home wrap -->
 		</div>
+		<!-- /container -->
 	</div>
-	<!-- /BREADCRUMB -->
+	<!-- /HOME -->
 
 	<!-- section -->
 	<div class="section">
@@ -333,204 +376,39 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<!-- ASIDE -->
-				<div id="aside" class="col-md-3">
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Category:</h3>
-						<button class="primary-btn">Clear All</button>
-					</div>
-					<!-- /aside widget -->
-
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Filter by Price</h3>
-						
-					</div>
-					<!-- aside widget -->
+				<!-- banner -->
+				<div class="col-md-4 col-sm-6">
+					<a class="banner banner-1" href="#">
+						<img src="./img/fruit.jpg" alt="">
+						<div class="banner-caption text-center">
+							<h2 class="white-color">Fresh Produce</h2>
+						</div>
+					</a>
 				</div>
-				<!-- /ASIDE -->
+				<!-- /banner -->
 
-				<!-- MAIN -->
-				<div id="main" class="col-md-9">
-					<!-- store top filter -->
-					<div class="store-filter clearfix">
-						<div class="pull-left">
-							<div class="row-filter">
-								<a href="#"><i class="fa fa-th-large"></i></a>
-								<a href="#" class="active"><i class="fa fa-bars"></i></a>
-							</div>
-							<div class="sort-filter">
-								<span class="text-uppercase">Sort By:</span>
-								<select class="input">
-										<option value="0">Position</option>
-										<option value="0">Price</option>
-										<option value="0">Rating</option>
-									</select>
-								<a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
-							</div>
+				<!-- banner -->
+				<div class="col-md-4 col-sm-6">
+					<a class="banner banner-1" href="#">
+						<img src="./img/wine.jpg" alt="">
+						<div class="banner-caption text-center">
+							<h2 class="white-color">NEW COLLECTION</h2>
 						</div>
-						<div class="pull-right">
-							<div class="page-filter">
-								<span class="text-uppercase">Show:</span>
-								<select class="input">
-										<option value="0">10</option>
-										<option value="1">20</option>
-										<option value="2">30</option>
-									</select>
-							</div>
-							<ul class="store-pages">
-								<li><span class="text-uppercase">Page:</span></li>
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- /store top filter -->
-
-					<!-- STORE -->
-					<div id="store">
-						<!-- row -->
-						<div class="row">
-							<!-- Product Single -->
-							<div class="col-md-4 col-sm-6 col-xs-6">
-								<div class="product product-single">
-									<div class="product-thumb">
-										<div class="product-label">
-											<span>New</span>
-											<span class="sale">-20%</span>
-										</div>
-										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/frozenfood/frozen1.jpeg" alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o empty"></i>
-										</div>
-										<h2 class="product-name"><a href="#">Birds Eye Steamfresh Select Super Sweet Corn</a></h2>
-										<div class="product-btns">
-											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-											<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
-
-							<!-- Product Single -->
-							<div class="col-md-4 col-sm-6 col-xs-6">
-								<div class="product product-single">
-									<div class="product-thumb">
-										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/frozenfood/frozen2.jpeg" alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="product-price">$32.50</h3>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o empty"></i>
-										</div>
-										<h2 class="product-name"><a href="#">kellogg's® Eggo® Chocolatey Chip Waffles</a></h2>
-										<div class="product-btns">
-											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-											<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
-
-							<div class="clearfix visible-sm visible-xs"></div>
-
-							<!-- Product Single -->
-							<div class="col-md-4 col-sm-6 col-xs-6">
-								<div class="product product-single">
-									<div class="product-thumb">
-										<div class="product-label">
-											<span>New</span>
-											<span class="sale">-20%</span>
-										</div>
-										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/frozenfood/frozen3.jpeg" alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o empty"></i>
-										</div>
-										<h2 class="product-name"><a href="#"> DIGIORNO® Original Rising Crust Pepperoni</a></h2>
-										<div class="product-btns">
-											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
-											<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
-
-							<div class="clearfix visible-md visible-lg"></div>
-
-							
-						</div>
-						<!-- /row -->
-					</div>
-					<!-- /STORE -->
-
-					<!-- store bottom filter -->
-					<div class="store-filter clearfix">
-						<div class="pull-left">
-							<div class="row-filter">
-								<a href="#"><i class="fa fa-th-large"></i></a>
-								<a href="#" class="active"><i class="fa fa-bars"></i></a>
-							</div>
-							<div class="sort-filter">
-								<span class="text-uppercase">Sort By:</span>
-								<select class="input">
-										<option value="0">Position</option>
-										<option value="0">Price</option>
-										<option value="0">Rating</option>
-									</select>
-								<a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
-							</div>
-						</div>
-						<div class="pull-right">
-							<div class="page-filter">
-								<span class="text-uppercase">Show:</span>
-								<select class="input">
-										<option value="0">10</option>
-										<option value="1">20</option>
-										<option value="2">30</option>
-									</select>
-							</div>
-							<ul class="store-pages">
-								<li><span class="text-uppercase">Page:</span></li>
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- /store bottom filter -->
+					</a>
 				</div>
-				<!-- /MAIN -->
+				<!-- /banner -->
+
+				<!-- banner -->
+				<div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
+					<a class="banner banner-1" href="#">
+						<img src="./img/Heinz.png" alt="">
+						<div class="banner-caption text-center">
+							<h2 class="white-color">NEW COLLECTION</h2>
+						</div>
+					</a>
+				</div>
+				<!-- /banner -->
+
 			</div>
 			<!-- /row -->
 		</div>
@@ -538,6 +416,22 @@
 	</div>
 	<!-- /section -->
 
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- section-title -->
+				<div class="col-md-12">
+					<div class="section-title">
+						<h2 class="title">Deals Of The Day</h2>
+						<div class="pull-right">
+							<div class="product-slick-dots-1 custom-dots"></div>
+						</div>
+					</div>
+				</div>
+				<!-- /section-title -->
 	<!-- FOOTER -->
 	<footer id="footer" class="section section-grey">
 		<!-- container -->
@@ -550,12 +444,12 @@
 						<!-- footer logo -->
 						<div class="footer-logo">
 							<a class="logo" href="#">
-		            <img src="./img/logo.png" alt="">
+		            <img src="./img/MunchiesLogo.jpg" alt="">
 		          </a>
 						</div>
 						<!-- /footer logo -->
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+						<p>Food n Stuff</p>
 
 						<!-- footer social -->
 						<ul class="footer-social">
@@ -576,8 +470,6 @@
 						<h3 class="footer-header">My Account</h3>
 						<ul class="list-links">
 							<li><a href="#">My Account</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Compare</a></li>
 							<li><a href="#">Checkout</a></li>
 							<li><a href="#">Login</a></li>
 						</ul>

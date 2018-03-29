@@ -10,7 +10,7 @@
 	<!-- Tab Icon-->
 	<link rel = "icon" href = "./img/MunchiesLogo.jpg">
 	
-	<title>Grain & Pasta</title>
+	<title>Beverages</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -97,7 +97,7 @@
 								<option value="1">Beverages</option>
 								<option value="1">Baking</option>
 								<option value="1">Breakfast & Cereal</option>
-								<option value="1">Frozen Food</option
+								<option value="1">Frozen Food</option>
 								<option value="1">Meat</option>
 								<option value="1">Produce</option>
 							</select>
@@ -403,7 +403,7 @@
 											<span class="sale">-20%</span>
 										</div>
 										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/grain/grain1.jpeg" alt="">
+										<img src="./foodimg/beverages/coke.jpeg" alt="">
 									</div>
 									<div class="product-body">
 										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
@@ -414,7 +414,7 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star-o empty"></i>
 										</div>
-										<h2 class="product-name"><a href="#">Kraft Macaroni & Cheese</a></h2>
+										<h2 class="product-name"><a href="#">Coca-Cola</a></h2>
 										<div class="product-btns">
 											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -430,7 +430,7 @@
 								<div class="product product-single">
 									<div class="product-thumb">
 										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/grain/grain2.jpeg" alt="">
+										<img src="./foodimg/beverages/dietcoke.jpeg" alt="">
 									</div>
 									<div class="product-body">
 										<h3 class="product-price">$32.50</h3>
@@ -441,7 +441,7 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star-o empty"></i>
 										</div>
-										<h2 class="product-name"><a href="#">Maruchan Instant Lunch Beef Flavor Ramen Noodles with Vegetables</a></h2>
+										<h2 class="product-name"><a href="#">Diet Coke</a></h2>
 										<div class="product-btns">
 											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -463,7 +463,7 @@
 											<span class="sale">-20%</span>
 										</div>
 										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-										<img src="./foodimg/grain/grain3.jpeg" alt="">
+										<img src="./foodimg/beverages/water.jpeg" alt="">
 									</div>
 									<div class="product-body">
 										<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
@@ -474,7 +474,7 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star-o empty"></i>
 										</div>
-										<h2 class="product-name"><a href="#">Amy's Bowls Broccoli & Cheddar Bake</a></h2>
+										<h2 class="product-name"><a href="#">AQUAFINA Water</a></h2>
 										<div class="product-btns">
 											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 											<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
