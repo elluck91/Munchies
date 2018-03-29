@@ -114,21 +114,12 @@
 								</div>
 								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 							</div>
-<<<<<<< HEAD:WebContent/index.html
 							<a href="./log.html" class="text-uppercase">Login</a> / <a href="./reg.html" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
 								<li><a href="./log.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
 								<li><a href="./reg.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
-=======
-							<a href="./login/login.jsp" class="text-uppercase">Login</a> / <a href="./register/register.jsp" class="text-uppercase">Join</a>
-							<ul class="custom-menu">
-								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="./checkout.jsp"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./login/login.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./register/register.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
->>>>>>> upstream/master:WebContent/index.jsp
 							</ul>
 						</li>
 						<!-- /Account -->
