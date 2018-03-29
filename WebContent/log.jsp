@@ -109,14 +109,14 @@
 								</div>
 								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="./log.html" class="text-uppercase">Login</a> / <a href="./reg.html" class="text-uppercase">Join</a>
+							<a href="./log.jsp" class="text-uppercase">Login</a> / <a href="./reg.jsp" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
 								<li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
 								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./log.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./reg.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="./log.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./reg.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -328,7 +328,7 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="clearfix">
+				<form id="checkout-form" class="clearfix" action = "./LoginAPI" method = "post">
 					<div class="col-md-6">
 						<div class="billing-details">
 							
@@ -343,10 +343,7 @@
 							</div>
 							<div class="form-group">
 								<div class="input-checkbox">
-									<button class="primary-btn">Login</button>
-									<div class="caption">
-												<input class="input" type="password" name="password" placeholder="Enter Your Password">
-									</div>
+									<button name = "Login" class="primary-btn" type ="submit">Login</button>
 								</div>
 							</div>
 						</div>

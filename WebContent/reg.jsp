@@ -109,14 +109,14 @@
 								</div>
 								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="./log.html" class="text-uppercase">Login</a> / <a href="./reg.html" class="text-uppercase">Join</a>
+							<a href="./log.jsp" class="text-uppercase">Login</a> / <a href="./reg.jsp" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
 								<li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
 								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="./log.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./reg.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -316,7 +316,7 @@
 		<div class="container">
 			<ul class="breadcrumb">
 				<li><a href="#">Home</a></li>
-				<li class="active">Checkout</li>
+				<li class="active">Register</li>
 			</ul>
 		</div>
 	<!-- /BREADCRUMB -->
@@ -328,34 +328,29 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="clearfix">
+				<form id="checkout-form" class="clearfix" action = "./RegisterAPI" method = "post">
 					<div class="col-md-6">
 						<div class="billing-details">
-							<p>Already a customer ? <a href="./log.html">Login</a></p>
-							<div class="section-title">
-							</div>
+							<p>Already a customer? <a href="./log.html">Login</a></p>
 								<h3 class="title">Register</h3>
 							<div class="form-group">
 								<input class="input" type="text" name="name" placeholder="Name">
 							</div>
 							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
+								<input class="input" type="text" name="email" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<input class="input" type="user" name="user" placeholder="Username">
+								<input class="input" type="text" name="user" placeholder="Username">
 							</div>
 							<div class="form-group">
-								<input class="input" type="pass" name="password" placeholder="Password">
+								<input class="input" type="text" name="pass" placeholder="Password">
 							</div>
 							<div class="form-group">
-								<input class="input" type="pass" name="password-con" placeholder="Confirm Password">
+								<input class="input" type="text" name="confirm pass" placeholder="Confirm Password">
 							</div>
 							<div class="form-group">
 								<div class="input-checkbox">
-									<button class="primary-btn">Create Account</button>
-									<div class="caption">
-												<input class="input" type="password" name="password" placeholder="Enter Your Password">
-									</div>
+									<button name = "Register" class="primary-btn" type = "submit">Register</button>
 								</div>
 							</div>
 						</div>
@@ -466,6 +461,14 @@
 		<!-- /container -->
 	</footer>
 	<!-- /FOOTER -->
+	
+	<div id="dropDownSelect1"></div>
+
+	<script type="text/javascript">
+		document.getElementById("myLogin").onclick = function(){
+			location.href ="index.html";
+		};
+	</script>
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>
