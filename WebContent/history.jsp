@@ -10,7 +10,7 @@
 	<!-- Tab Icon-->
 	<link rel = "icon" href = "./img/MunchiesLogo.jpg">
 	
-	<title>Baking</title>
+	<title>History</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -112,65 +112,59 @@
 				<div class="pull-right">
 					<ul class="header-btns">
 						<!-- Account -->
-						<li class="header-account dropdown default-dropdown">
-							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="fa fa-user-o"></i>
+						<form action = "./UserAPI" method = "get">
+							<li class="header-account dropdown default-dropdown">
+								<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+									<div class="header-btns-icon">
+										<i class="fa fa-user-o"></i>
+									</div>
+									<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 								</div>
-								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
-							</div>
-							<a href="./login/login.html" class="text-uppercase">Login</a> / <a href="./register/register.html" class="text-uppercase">Join</a>
-							<ul class="custom-menu">
-								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./login/login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./register/register.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
-							</ul>
-						</li>
+								<p alt = <a href="./login/login.html" class="text-uppercase">Login</a> / <a href="./register/register.html" class="text-uppercase">Join</a>${name}</p>
+								<ul class="custom-menu">
+									<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+									<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
+									<li><a href="./login/login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
+									<li><a href="./register/register.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								</ul>
+							</li>
+						</form>	
 						<!-- /Account -->
 
 						<!-- Cart -->
-						<li class="header-cart dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="fa fa-shopping-cart"></i>
-									<span class="qty">#</span>
-								</div>
-								<strong class="text-uppercase">My Cart:</strong>
-								<br>
-								<span>#</span>
-							</a>
-							<div class="custom-menu">
-								<div id="shopping-cart">
-									<div class="shopping-cart-list">
-										<div class="product product-widget">
-											<div class="product-thumb">
-												<img src="./img/thumb-product01.jpg" alt="">
+						<form action = "./CartAPI" method = "get">
+							<li class="header-cart dropdown default-dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+									<div class="header-btns-icon">
+										<i class="fa fa-shopping-cart"></i>
+										<span class="qty">${quantity}</span>
+									</div>
+									<strong class="text-uppercase">My Cart:</strong>
+									<br>
+									<span>${total}</span>
+								</a>
+								<div class="custom-menu">
+									<div id="shopping-cart">
+										<div class="shopping-cart-list">
+											<div class="product product-widget">
+												<div class="product-thumb">
+													<img src="./img/thumb-product01.jpg" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
+													<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+												</div>
+												<button class="cancel-btn"><i class="fa fa-trash"></i></button>
 											</div>
-											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-											</div>
-											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
 										</div>
-										<div class="product product-widget">
-											<div class="product-thumb">
-												<img src="./img/thumb-product01.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-											</div>
-											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
+										<div class="shopping-cart-btns">
+											<button class="main-btn">View Cart</button>
+											<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
 										</div>
 									</div>
-									<div class="shopping-cart-btns">
-										<button class="main-btn">View Cart</button>
-										<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
-									</div>
 								</div>
-							</div>
-						</li>
+							</li>
+						</form>	
 						<!-- /Cart -->
 
 						<!-- Mobile nav toggle-->
@@ -394,7 +388,7 @@
 					<!-- /store top filter -->
 
 					<!-- STORE -->
-				<form action ="BakingServlet" method = "get">
+				<form action ="HistoryAPI" method = "get">
 					<c:if test = "${list not empty}">
 						<c:forEach items="${list}" var = record>
 							<div id="store">
@@ -410,9 +404,7 @@
 												<img src="${record.picture}" alt="./foodimg/baking/baking3.jpeg">
 											</div>
 											<div class="product-body">
-												<h3 class="product-price">
-													<c:out value = "${record.price}"/>
-												</h3>
+												<h3 class="product-price">${record.price}</h3>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -420,11 +412,7 @@
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star-o empty"></i>
 												</div>
-												<h2 class="product-name">
-													<a href="#">
-														<c:out value = "${record.price}"/>
-													</a>
-												</h2>
+												<h2 class="product-name"><a href="#">${record.name}</a></h2>
 												<div class="product-btns">
 													<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 													<button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button>
@@ -434,10 +422,6 @@
 										</div>
 									</div>
 									<!-- /Product Single -->
-
-									<div class="clearfix visible-md visible-lg"></div>
-
-									
 								</div>
 								<!-- /row -->
 							</div>
