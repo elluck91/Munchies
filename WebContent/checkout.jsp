@@ -330,7 +330,7 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="clearfix" action = "./BillingAPI">
+				<form id="checkout-form" class="clearfix" action = "./CheckoutAPI">
 					<div class="col-md-6">
 						<div class="billing-details">
 							<p>Already a customer ? <a href="#">Login</a></p>
@@ -446,7 +446,7 @@
 								</tfoot>
 							</table>
 							<div class="pull-right">
-								<button class="primary-btn">Place Order</button>
+								<button class="primary-btn">Checkout</button>
 							</div>
 						</div>
 

@@ -119,12 +119,12 @@
 								</div>
 								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="./login/login.html" class="text-uppercase">Login</a> / <a href="./register/register.html" class="text-uppercase">Join</a>
+							<a href="./log.jsp" class="text-uppercase">Login</a> / <a href="./reg.jsp" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./login/login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./register/register.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="./checkout.jsp"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="./log.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./reg.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -422,7 +422,7 @@
 												</div>
 												<h2 class="product-name">
 													<a href="#">
-														<c:out value = "${record.price}"/>
+														<c:out value = "${record.name}"/>
 													</a>
 												</h2>
 												<div class="product-btns">
