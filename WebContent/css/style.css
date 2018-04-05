@@ -66,11 +66,17 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1{
+	color: #30323A;
+    margin: 0 0 10px;
+    font-weight: 700;
+	text-shadow: 1px 1px #000000;
+}
+
+h2, h3, h4, h5, h6 {
   color: #30323A;
   margin: 0 0 10px;
   font-weight: 700;
-  text-shadow: 1px 1px #000000;
 }
 
 a {
@@ -785,8 +791,8 @@ textarea.input {
   margin-bottom: 15px;
 }
 
-.banner>img {
-  width: 100%;
+.banner img {
+  width: 100%; 
 }
 
 .banner.banner-1 .banner-caption {
@@ -805,6 +811,19 @@ textarea.input {
   bottom: 10%;
 }
 
+.banner.banner-3 .banner-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.banner.banner-3 {
+	height: 500px;
+}
+
 .banner h1 {
   font-size: 46px;
   text-transform: uppercase;
@@ -815,7 +834,7 @@ textarea.input {
 ===========================================================*/
 
 #home .home-wrap {
-  margin-left: 270px;
+  margin-left: 0px;
 }
 
 #home-slick .banner {

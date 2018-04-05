@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+	<link rel = "icon" href = "./img/MunchiesLogo.jpg">
 	<title>Munchies</title>
 
 	<!-- Google font -->
@@ -40,46 +40,13 @@
 <body>
 	<!-- HEADER -->
 	<header>
-		<!-- top Header -->
-		<div id="top-header">
-			<div class="container">
-				<div class="pull-left">
-					<span>Welcome to Munchies</span>
-				</div>
-				<div class="pull-right">
-					<ul class="header-top-links">
-						<li><a href="#">Store</a></li>
-						<li><a href="#">Newsletter</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">ENG <i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="#">English (ENG)</a></li>
-								<li><a href="#">Russian (Ru)</a></li>
-								<li><a href="#">French (FR)</a></li>
-								<li><a href="#">Spanish (Es)</a></li>
-							</ul>
-						</li>
-						<li class="dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">USD <i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="#">USD ($)</a></li>
-								<li><a href="#">EUR (€)</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- /top Header -->
-
 		<!-- header -->
 		<div id="header">
 			<div class="container">
 				<div class="pull-left">
 					<!-- Logo -->
 					<div class="header-logo">
-						<a class="logo" href="#">
+						<a class="logo" href="index.jsp">
 							<img src="./img/MunchiesLogoCrop.jpg" alt="">
 						</a>
 					</div>
@@ -91,8 +58,12 @@
 							<input class="input search-input" type="text" placeholder="Enter your keyword">
 							<select class="input search-categories">
 								<option value="0">All Categories</option>
-								<option value="1">Category 01</option>
-								<option value="1">Category 02</option>
+								<option value="1">Beverages</option>
+								<option value="1">Baking</option>
+								<option value="1">Breakfast & Cereal</option>
+								<option value="1">Frozen Food</option>
+								<option value="1">Grains & Pasta</option>
+								<option value="1">Produce</option>
 							</select>
 							<button class="search-btn"><i class="fa fa-search"></i></button>
 						</form>
@@ -112,9 +83,7 @@
 							<a href="./log.jsp" class="text-uppercase">Login</a> / <a href="./reg.jsp" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
-								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
 								<li><a href="./log.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
 								<li><a href="./reg.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
@@ -187,109 +156,25 @@
 				<!-- category nav -->
 				<div class="category-nav show-on-click">
 					<div class="category-nav">
-						<span class="category-header">Categories<i class="fa fa-list"></i></span>
+						<span class="category-header">Categories <i class="fa fa-list"></i></span>
 						<ul class="category-list">
 							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Beverages<i class="fa fa-angle-right"></i></a>
-								<div class="custom-menu">
-									<div class="row hidden-sm hidden-xs">
-										<div class="col-md-12">
-											<hr>
-											<a class="banner banner-1" href="./beverages.html">
-												<img src="./img/drinks.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn">VIEW ALL</button>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
+								<a class="dropdown-toggle" href = "beverages.jsp">Beverages<i class="fa fa-angle-right"></i></a>
 							</li>
 							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Baking<i class="fa fa-angle-right"></i></a>
-								<div class="custom-menu">
-									<div class="row hidden-sm hidden-xs">
-										<div class="col-md-12">
-											<hr>
-											<a class="banner banner-1" href="./baking.html">
-												<img src="./img/cupcake.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn" href="./baking.html">VIEW ALL</button>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
+								<a class="dropdown-toggle" href = "baking.jsp">Baking<i class="fa fa-angle-right"></i></a>
 							</li>
 							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
-								<div class="custom-menu">
-									<div class="row hidden-sm hidden-xs">
-										<div class="col-md-12">
-											<hr>
-											<a class="banner banner-1" href="breakfast.html">
-												<img src="./img/cereal.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn">VIEW ALL</button>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
+								<a class="dropdown-toggle" href = "breakfast.jsp">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
 							</li>
 							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Frozen Foods<i class="fa fa-angle-right"></i></a>
-								<div class="custom-menu">
-									<div class="row hidden-sm hidden-xs">
-										<div class="col-md-12">
-											<hr>
-											<a class="banner banner-1" href="frozenfood.html">
-												<img src="./img/ben.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn">VIEW ALL</button>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
+								<a class="dropdown-toggle" href = "frozenfood.jsp">Frozen Foods<i class="fa fa-angle-right"></i></a>
 							</li>
 							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Grains & Pasta<i class="fa fa-angle-right"></i></a>
-								<div class="custom-menu">
-									<div class="row hidden-sm hidden-xs">
-										<div class="col-md-12">
-											<hr>
-											<a class="banner banner-1" href="grain.html">
-												<img src="./img/pasta.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn">VIEW ALL</button>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
+								<a class="dropdown-toggle" href = "grain.jsp">Grains & Pasta<i class="fa fa-angle-right"></i></a>
 							</li>
 							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Produce<i class="fa fa-angle-right"></i></a>
-								<div class="custom-menu">
-									<div class="row hidden-sm hidden-xs">
-										<div class="col-md-12">
-											<hr>
-											<a class="banner banner-1" href="produce.html">
-												<img src="./img/produce.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h2 class="white-color">NEW COLLECTION</h2>
-													<button class="primary-btn">VIEW ALL</button>
-												</div>
-											</a>
-										</div>
-									</div>
-								</div>
+								<a class="dropdown-toggle" href = "produce.jsp">Produce<i class="fa fa-angle-right"></i></a>
 							</li>
 						</ul>
 					</div>
@@ -300,7 +185,7 @@
 				<div class="menu-nav">
 					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
 					<ul class="menu-list">
-						<li><a href="./index.html">Home</a></li>
+						<li><a href="./index.jsp">Home</a></li>
 						<li><a href="#">Shop</a></li>
 					</ul>
 				</div>
@@ -310,6 +195,7 @@
 		<!-- /container -->
 	</div>
 	<!-- /NAVIGATION -->
+
 
 	<!-- BREADCRUMB -->
 	<div id="breadcrumb">
