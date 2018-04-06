@@ -34,7 +34,6 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
 </head>
 
 <body>
@@ -207,6 +206,7 @@
 		</div>
 	<!-- /BREADCRUMB -->
 	</div>
+	
 
 	<!-- section -->
 	<div class="section">
@@ -214,34 +214,33 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="clearfix" action = "./RegisterAPI" method = "post">
-					<div class="col-md-6">
-						<div class="billing-details">
-							<p>Already a customer? <a href="./log.html">Login</a></p>
-								<h3 class="title">Register</h3>
-							<div class="form-group">
-								<input class="input" type="text" name="name" placeholder="Name">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="email" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="user" placeholder="Username">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="pass" placeholder="Password">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="confirm pass" placeholder="Confirm Password">
-							</div>
-							<div class="form-group">
-								<div class="input-checkbox">
-									<button name = "Register" class="primary-btn" type = "submit">Register</button>
+				<form id="checkout-form" class="login100-form validate-form flex-sb flex-w" action = "#" method = "post" onSubmit = "return checkforblank()">
+					<fieldset>
+						<div class="col-md-6">
+							<div class="billing-details">
+								<p>Already a customer? <a href="./log.html">Login</a></p>
+									<h3 class="title">Register</h3>
+								<div class="form-group">
+									<input id = "name" class="input" type="text" name="name" placeholder="Name">
+								</div>
+								<div class="form-group">
+									<input id = "email" class="input" type="text" name="email" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<input id = "username" class="input" type="text" name="user" placeholder="Username">
+								</div>
+								<div class="form-group">
+									<input id = "password" class="input" type="password" name="pass" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<input id = "conpassword" class="input" type="password" name="confirm pass" placeholder="Confirm Password">
+								</div>
+								<div class="form-group">
+									<button name = "Register" class="primary-btn" type = "submit" value = "Submit">Register</button>
 								</div>
 							</div>
 						</div>
-
-					</div>
+					</fieldset>
 				</form>
 			</div>
 			<!-- /row -->
@@ -349,6 +348,37 @@
 	<!-- /FOOTER -->
 	
 	<div id="dropDownSelect1"></div>
+	
+	<script type = "text/javascript">
+	
+	function checkforblank(){
+		
+		var errormessage = "";
+		if(document.getElementById('name').value == ""){
+			errormessage += "Name is required \n";
+		}
+		if(document.getElementById('email').value == ""){
+			errormessage += "Email is required \n";
+		}
+		if(document.getElementById('username').value == ""){
+			errormessage += "Username is required \n";
+		}
+		if(document.getElementById('password').value == ""){
+			errormessage += "Password is required \n";
+		}
+		if(document.getElementById('conpassword').value != document.getElementById('password').value || document.getElementById('conpassword').value == ""){
+			errormessage += "Passwords must match\n";
+		}
+		if(errormessage != ""){
+			alert(errormessage);
+			return false;
+		}
+	
+			
+	}
+	</script>
+	
+	
 
 	<script type="text/javascript">
 		document.getElementById("myLogin").onclick = function(){
