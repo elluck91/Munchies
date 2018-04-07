@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
 <head>
@@ -240,8 +240,7 @@
 
 					<!-- STORE -->
 				<form action ="BakingServlet" method = "get">
-					<c:if test = "${list not empty}">
-						<c:forEach items="${list}" var = record>
+						<c:forEach items = "${list}" var = "record">
 							<div id="store">
 								<!-- row -->
 								<div class="row">
@@ -287,7 +286,6 @@
 								<!-- /row -->
 							</div>
 						</c:forEach>
-					</c:if>	
 				</form>
 					<!-- /STORE -->
 				</div>
