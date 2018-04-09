@@ -69,22 +69,15 @@ public class RegisterAPI extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
 	 */
-<<<<<<< HEAD
-	public void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-=======
+
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
->>>>>>> 2fa2eb31a355f926e4162459c42a8a8d82185c5f
 		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
 	 */
-<<<<<<< HEAD
-	public void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-=======
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
->>>>>>> 2fa2eb31a355f926e4162459c42a8a8d82185c5f
 		// TODO Auto-generated method stub
 	}
 
