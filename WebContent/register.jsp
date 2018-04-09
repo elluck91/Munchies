@@ -1,4 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" import="org.elluck91.munchies.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,7 +214,7 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="login100-form validate-form flex-sb flex-w" action = "RegisterAPI" method = "post" onSubmit = "return checkforblank()">
+				<form id="checkout-form" class="login100-form validate-form flex-sb flex-w" action = "RegisterAPI" method = "post" onsubmit = "return checkforblank()">
 					<fieldset>
 						<div class="col-md-6">
 							<div class="billing-details">
@@ -359,7 +358,7 @@
 			errormessage += "Name is required \n";
 		}
 		if(document.getElementById('email').value == ""){
-			errormessage += "Email is required \n";
+			errormessage += "Valid email is required \n";
 		}
 		if(document.getElementById('username').value == ""){
 			errormessage += "Username is required \n";
@@ -374,8 +373,7 @@
 			alert(errormessage);
 			return false;
 		}
-	
-			
+		
 	}
 	</script>
 	

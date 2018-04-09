@@ -214,7 +214,7 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="clearfix" action = "./CheckoutAPI">
+				<form id="checkout-form" class="clearfix" action = "CheckoutAPI" method = "post" onSubmit = "">
 					<div class="col-md-6">
 						<div class="billing-details">
 							<p>Already a customer ? <a href="#">Login</a></p>
@@ -440,6 +440,35 @@
 		<!-- /container -->
 	</footer>
 	<!-- /FOOTER -->
+	
+	<script type = "text/javascript">
+	
+	function checkforblank(){
+		
+		var errormessage = "";
+	if(document.getElementById('name').value == ""){
+			errormessage += "Name is required \n";
+		}
+		if(document.getElementById('email').value == "" || document.getElementById('email').value.includes("@")){
+			errormessage += "Valid email is required \n";
+		}
+		if(document.getElementById('username').value == ""){
+			errormessage += "Username is required \n";
+		}
+		if(document.getElementById('password').value == ""){
+			errormessage += "Password is required \n";
+		}
+		if(document.getElementById('conpassword').value != document.getElementById('password').value || document.getElementById('conpassword').value == ""){
+			errormessage += "Passwords must match\n";
+		}
+		if(errormessage != ""){
+			alert(errormessage);
+			return false;
+		}
+	
+			
+	}
+	</script>
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>

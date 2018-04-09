@@ -254,7 +254,7 @@
 					<a class="banner banner-1" href="#">
 						<img src="./img/fruit.jpg" alt="">
 						<div class="banner-caption text-center">
-							<h2 class="white-color">Fresh Produce</h2>
+							<h1 class="white-color font-weak">Fresh Produce</h2>
 						</div>
 					</a>
 				</div>
@@ -265,7 +265,7 @@
 					<a class="banner banner-1 " href="#">
 						<img src="./img/wine.jpg" alt="">
 						<div class="banner-caption text-center">
-							<h2 class="white-color">NEW COLLECTION</h2>
+							<h1 class="white-color font-weak">New Collection</h2>
 						</div>
 					</a>
 				</div>
@@ -276,7 +276,7 @@
 					<a class="banner banner-1" href="#">
 						<img src="./img/Heinz.png" alt="">
 						<div class="banner-caption text-center">
-							<h2 class="white-color">NEW COLLECTION</h2>
+							<h1 class="white-color font-weak">Discounted Prices</h2>
 						</div>
 					</a>
 				</div>
