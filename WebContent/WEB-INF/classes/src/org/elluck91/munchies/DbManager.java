@@ -31,12 +31,15 @@ public class DbManager implements IRepo{
 
 	@Override
 	public int Login(String username, String password) {
-		
+
 		System.out.println("Username: " + username + " Password: " + password);
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");
+
 			con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","root","admin");
+
+			//con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","elluck91","blank");
 
 			PreparedStatement sql = con.prepareStatement("SELECT COUNT(*) FROM Users WHERE Username=? AND Password=sha2(?, 256)");
 			sql.setString(1, username);
@@ -44,7 +47,10 @@ public class DbManager implements IRepo{
 
 
 			ResultSet res=  sql.executeQuery();
+
 			res.next();
+			System.out.println("Result: " + res.getInt(1));
+
 
 			return res.getInt(1);
 
@@ -74,7 +80,11 @@ public class DbManager implements IRepo{
 
 			Class.forName("com.mysql.jdbc.Driver");
 			//con  = DriverManager.getConnection("jdbc:mysql://localhost/Students","cmpe133","cmpe133_Spring2018!");
+
 			con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","root","admin");
+
+			//con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","elluck91","blank");
+
 
 			PreparedStatement sql = con.prepareStatement("INSERT INTO Users VALUES(?,sha2(?, 256),?,?,?)");
 			sql.setString(1, user.username);
@@ -113,6 +123,8 @@ public class DbManager implements IRepo{
 
 			Class.forName("com.mysql.jdbc.Driver");
 			con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","root","admin");
+			//con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","elluck91","blank");
+
 
 			User user = new User();
 
