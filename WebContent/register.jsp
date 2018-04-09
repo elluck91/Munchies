@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" import="org.elluck91.munchies.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,12 +80,12 @@
 								</div>
 								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="./log.jsp" class="text-uppercase">Login</a> / <a href="./reg.jsp" class="text-uppercase">Join</a>
+							<a href="./login.jsp" class="text-uppercase">Login</a> / <a href="./register.jsp" class="text-uppercase">Join</a>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./log.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./reg.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="./login.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./register.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -227,7 +228,7 @@
 									<input id = "email" class="input" type="text" name="email" placeholder="Email">
 								</div>
 								<div class="form-group">
-									<input id = "username" class="input" type="text" name="user" placeholder="Username">
+									<input id = "username" class="input" type="text" name="username" placeholder="Username">
 								</div>
 								<div class="form-group">
 									<input id = "password" class="input" type="password" name="pass" placeholder="Password">
