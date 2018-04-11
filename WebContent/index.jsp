@@ -78,9 +78,18 @@
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
+								<strong class="text-uppercase">My Account<i class="fa fa-caret-down"></i></strong>
 							</div>
+							<% 
+								String username = (String) session.getAttribute("userid");
+								if (username == null){
+							%>
 							<a href="./login.jsp" class="text-uppercase">Login</a> / <a href="./register.jsp" class="text-uppercase">Join</a>
+							<%
+								}else {
+							%>
+							<li>Welcome, <%= request.getSession().getAttribute("userid")%><a href = "LogoutAPI">Logout</a></li>
+								<% }%>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
 								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
