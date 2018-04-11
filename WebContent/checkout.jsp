@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
 <head>
@@ -214,7 +215,7 @@
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="clearfix" action = "CheckoutAPI" method = "post" onSubmit = "">
+				<form id="checkout-form" class="clearfix" action = "CheckoutAPI" method = "post" onSubmit = "return checkforblank()">
 					<div class="col-md-6">
 						<div class="billing-details">
 							<p>Already a customer ? <a href="#">Login</a></p>
@@ -222,25 +223,28 @@
 								<h3 class="title">Billing Details</h3>
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="name" placeholder="Name">
+								<input id = "name" class="input" type="text" name="name" placeholder="Name">
 							</div>
 							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
+								<input id = "email" class="input" type="email" name="email" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
+								<input id = "address" class="input" type="text" name="address" placeholder="Address">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="city" placeholder="City">
+								<input id = "city" class="input" type="text" name="city" placeholder="City">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="country" placeholder="Country">
+								<input id = "state" class="input" type="text" name="state" placeholder="State">
 							</div>
 							<div class="form-group">
-								<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
+								<input id = "country" class="input" type="text" name="country" placeholder="Country">
 							</div>
 							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
+								<input id = "zipcode" class="input" type="text" name="zip-code" placeholder="ZIP Code">
+							</div>
+							<div class="form-group">
+								<input id = "tel" class="input" type="tel" name="tel" placeholder="Telephone">
 							</div>
 							<div class="form-group">
 								<div class="input-checkbox">
@@ -296,26 +300,55 @@
 									</tr>
 								</thead>
 								<tbody>
+									<%
+										if(session.getAttribute("cart") != null) {
+									%>
+									<c:forEach items="${list}" var="item">
+										<tr>
+											<td class="thumb"><img src="${item.img}" alt=""></td>
+											<td class="details">
+												<a href="#">${item.name}</a>
+												<ul>
+													<li><span>${item.description}</span></li>
+													
+												</ul>
+											</td>
+											<td class="price text-center"><strong>${item.price}</strong><br></td>
+											<td class="qty text-center"><input class="input" type="number">${item.quantity}</td>
+											<td class="total text-center"><strong class="primary-color">${item.price*item.quantity}</strong></td>
+											<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
+										</tr>
+										</tbody>
+									</c:forEach>
+										<tfoot>
+											<tr>
+												<th class="empty" colspan="3"></th>
+												<th>SUBTOTAL</th>
+												<th colspan="2" class="sub-total">$ <%= request.getSession().getAttribute("total")%></th>
+											</tr>
+											<tr>
+												<th class="empty" colspan="3"></th>
+												<th>SHIPING</th>
+												<td colspan="2">Free Shipping</td>
+											</tr>
+											<tr>
+												<th class="empty" colspan="3"></th>
+												<th>TOTAL</th>
+												<th colspan="2" class="total">$ <%= request.getSession().getAttribute("total")%></th>
+											</tr>
+										</tfoot>
+									<%
+										}else{
+									%>
 									<tr>
-										<td class="thumb"><img src="./img/thumb-product01.jpg" alt=""></td>
-										<td class="details">
-											<a href="#">Product Name Goes Here</a>
-											<ul>
-												<li><span>Description</span></li>
-												
-											</ul>
-										</td>
-										<td class="price text-center"><strong>price</strong><br></td>
-										<td class="qty text-center"><input class="input" type="number" value="1"></td>
-										<td class="total text-center"><strong class="primary-color">$32.50</strong></td>
-										<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
+										<h2>Empty Cart</h2>
 									</tr>
 								</tbody>
 								<tfoot>
 									<tr>
 										<th class="empty" colspan="3"></th>
 										<th>SUBTOTAL</th>
-										<th colspan="2" class="sub-total">$97.50</th>
+										<th colspan="2" class="sub-total">$0.00</th>
 									</tr>
 									<tr>
 										<th class="empty" colspan="3"></th>
@@ -325,9 +358,10 @@
 									<tr>
 										<th class="empty" colspan="3"></th>
 										<th>TOTAL</th>
-										<th colspan="2" class="total">$97.50</th>
+										<th colspan="2" class="total">$0.00</th>
 									</tr>
 								</tfoot>
+								<%}%>
 							</table>
 							<div class="pull-right">
 								<button class="primary-btn">Checkout</button>
@@ -442,6 +476,11 @@
 	<!-- /FOOTER -->
 	
 	<script type = "text/javascript">
+		
+	</script>
+	
+	
+	<script type = "text/javascript">
 	
 	function checkforblank(){
 		
@@ -452,14 +491,23 @@
 		if(document.getElementById('email').value == "" || document.getElementById('email').value.includes("@")){
 			errormessage += "Valid email is required \n";
 		}
-		if(document.getElementById('username').value == ""){
-			errormessage += "Username is required \n";
+		if(document.getElementById('address').value == ""){
+			errormessage += "Address is required \n";
 		}
-		if(document.getElementById('password').value == ""){
-			errormessage += "Password is required \n";
+		if(document.getElementById('city').value == ""){
+			errormessage += "City is required \n";
 		}
-		if(document.getElementById('conpassword').value != document.getElementById('password').value || document.getElementById('conpassword').value == ""){
-			errormessage += "Passwords must match\n";
+		if(document.getElementById('state').value == ""){
+			errormessage += "state is required \n";
+		}
+		if(document.getElementById('country').value == ""){
+			errormessage += "Country is required \n";
+		}
+		if(document.getElementById('zipcode').value == ""){
+			errormessage += "Zip Code is required \n";
+		}
+		if(document.getElementById('tel').value == ""){
+			errormessage += "Telephone number is required \n";
 		}
 		if(errormessage != ""){
 			alert(errormessage);

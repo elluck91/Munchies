@@ -79,14 +79,25 @@
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
+								<strong class="text-uppercase">My Account<i class="fa fa-caret-down"></i></strong>
 							</div>
-							<a href="./log.jsp" class="text-uppercase">Login</a> / <a href="./reg.jsp" class="text-uppercase">Join</a>
+							<% 
+								String username = (String) session.getAttribute("userid");
+								if (username == null){
+							%>
+							<a href="./login.jsp" class="text-uppercase">Login</a> / <a href="./register.jsp" class="text-uppercase">Join</a>
+							<%
+								}else {
+							%>
+							<a>Hi, <%= request.getSession().getAttribute("userid")%></a>
+							<a href = "LogoutAPI">&emsp;Logout</a>
+								<% }%>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="./log.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="./reg.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+								<li><a href="./checkout.jsp"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="./history.jsp"><i class="fa fa-unlock-alt"></i> History</a></li>
+								<li><a href="./login.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
+								<li><a href="./register.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
 						</li>
 						<!-- /Account -->
@@ -96,11 +107,27 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 								<div class="header-btns-icon">
 									<i class="fa fa-shopping-cart"></i>
-									<span class="qty">#</span>
+									<%
+										if (request.getSession().getAttribute("cart") == null){
+									%>
+									<span class="qty">0</span>
+									<% 
+										}else {
+									%>
+									<span class="qty"><%= request.getSession().getAttribute("quantity")%></span>
+									<%} %>
 								</div>
 								<strong class="text-uppercase">My Cart:</strong>
 								<br>
-								<span>#</span>
+								<%
+									if (request.getSession().getAttribute("cart") == null){
+								%>
+								<span>0</span>
+									<%
+									}else {
+									%>
+									<span><%= request.getSession().getAttribute("total")%></span>
+									<%}%>
 							</a>
 							<div class="custom-menu">
 								<div id="shopping-cart">
@@ -128,7 +155,7 @@
 									</div>
 									<div class="shopping-cart-btns">
 										<button class="main-btn">View Cart</button>
-										<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
+										<button class="primary-btn" href = "./checkout.jsp">Checkout <i class="fa fa-arrow-circle-right"></i></button>
 									</div>
 								</div>
 							</div>
@@ -219,7 +246,7 @@
 				<div id="aside" class="col-md-3">
 					<!-- aside widget -->
 					<div class="aside">
-						<h3 class="aside-title">Category: <%= %></h3>
+						<h3 class="aside-title">Category: </h3>
 					</div>
 					<!-- /aside widget -->
 				</div>
@@ -251,7 +278,7 @@
 												<div class="product-label">
 												</div>
 												<button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button>
-												<img src="${record.picture}" alt =" Image not found">
+												<img src=${record.picture} alt =" Image not found">
 											</div>
 											<div class="product-body">
 												<h3 class="product-price">
