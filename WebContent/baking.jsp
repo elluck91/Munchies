@@ -219,7 +219,7 @@
 				<div id="aside" class="col-md-3">
 					<!-- aside widget -->
 					<div class="aside">
-						<h3 class="aside-title">Category: Baking</h3>
+						<h3 class="aside-title">Category: <%= %></h3>
 					</div>
 					<!-- /aside widget -->
 				</div>
@@ -239,7 +239,7 @@
 					<!-- /store top filter -->
 
 					<!-- STORE -->
-				<form action ="BakingServlet" method = "get">
+				<form action ="CategoryAPI" method = "get">
 						<c:forEach items = "${list}" var = "record">
 							<div id="store">
 								<!-- row -->

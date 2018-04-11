@@ -104,11 +104,27 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 								<div class="header-btns-icon">
 									<i class="fa fa-shopping-cart"></i>
-									<span class="qty">#</span>
+									<%
+										if (request.getSession().getAttribute("cart") == null){
+									%>
+									<span class="qty">0</span>
+									<% 
+										}else {
+									%>
+									<span class="qty"><%= request.getSession().getAttribute("quantity")%></span>
+									<%} %>
 								</div>
 								<strong class="text-uppercase">My Cart:</strong>
 								<br>
-								<span>#</span>
+								<%
+									if (request.getSession().getAttribute("cart") == null){
+								%>
+								<span>0</span>
+									<%
+									}else {
+									%>
+									<span><%= request.getSession().getAttribute("total")%></span>
+									<%}%>
 							</a>
 							<div class="custom-menu">
 								<div id="shopping-cart">
