@@ -92,7 +92,7 @@
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '>';
+    content: '>	';
 }
 
 .slick-next
