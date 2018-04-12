@@ -120,7 +120,7 @@
 								<%
 									if (request.getSession().getAttribute("cart") == null){
 								%>
-								<span>0</span>
+								<span>$0.00</span>
 									<%
 									}else {
 									%>
