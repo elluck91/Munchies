@@ -89,7 +89,7 @@
 								}else {
 							%>
 							<a>Hi, <%= request.getSession().getAttribute("userid")%></a>
-							<a href = "LogoutAPI">Logout</a>
+							<a href = "LogoutAPI">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout</a>
 								<% }%>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
@@ -124,7 +124,7 @@
 									<%
 									}else {
 									%>
-									<span><%= request.getSession().getAttribute("total")%></span>
+									<span>$ <%= request.getSession().getAttribute("total")%></span>
 									<%}%>
 							</a>
 							<div class="custom-menu">
@@ -183,25 +183,35 @@
 				<div class="category-nav show-on-click">
 					<div class="category-nav">
 						<span class="category-header">Categories <i class="fa fa-list"></i></span>
-						<ul class="category-list">
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "beverages.jsp">Beverages<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "baking.jsp">Baking<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "breakfast.jsp">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "frozenfood.jsp">Frozen Foods<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "grain.jsp">Grains & Pasta<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "produce.jsp">Produce<i class="fa fa-angle-right"></i></a>
-							</li>
+						<ul class="category-list">			
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=beverages">Beverages<i class="fa fa-angle-right"></i></a>
+								</li>
+								<li class="dropdown side-dropdown">
+									<input type = "hidden" name = "baking" value = "baking"></input>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=baking">Baking<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<input type = "hidden" name = "breakfast" value = "breakfast"></input>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=breakfast">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<input type = "hidden" name = "frozenfood" value = "frozenfood"></input>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=frozenfood">Frozen Foods<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<input type = "hidden" name = "grain" value = "grain"></input>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=grain&pasta">Grains & Pasta<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<input type = "hidden" name = "produce" value = "produce"></input>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=produce">Produce<i class="fa fa-angle-right"></i></a>
+								</li>
+							</form>
 						</ul>
 					</div>
 				</div>
@@ -397,7 +407,16 @@
 		<!-- /container -->
 	</footer>
 	<!-- /FOOTER -->
-
+	
+	<script type = "text/javascript">
+		function submitMe() 
+		{ 
+			document.MyForm.action="http://www.ugs.com/"; 
+			document.MyForm.target="targetName"; 
+			document.MyForm.submit(); 
+			return; 
+		}
+	</script>
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
