@@ -77,12 +77,22 @@
 								<div class="header-btns-icon">
 									<i class="fa fa-user-o"></i>
 								</div>
-								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
+								<strong class="text-uppercase">My Account<i class="fa fa-caret-down"></i></strong>
 							</div>
+							<% 
+								String username = (String) session.getAttribute("userid");
+								if (username == null){
+							%>
 							<a href="./login.jsp" class="text-uppercase">Login</a> / <a href="./register.jsp" class="text-uppercase">Join</a>
+							<%
+								}else {
+							%>
+							<a>Hi, <%= request.getSession().getAttribute("userid")%></a>
+							<a href = "LogoutAPI">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout</a>
+								<% }%>
 							<ul class="custom-menu">
 								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="./checkout.html"><i class="fa fa-check"></i> Checkout</a></li>
+								<li><a href="./checkout.jsp"><i class="fa fa-check"></i> Checkout</a></li>
 								<li><a href="./login.jsp"><i class="fa fa-unlock-alt"></i> Login</a></li>
 								<li><a href="./register.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
@@ -94,11 +104,27 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 								<div class="header-btns-icon">
 									<i class="fa fa-shopping-cart"></i>
-									<span class="qty">#</span>
+									<%
+										if (request.getSession().getAttribute("cart") == null){
+									%>
+									<span class="qty">0</span>
+									<% 
+										}else {
+									%>
+									<span class="qty"><%= request.getSession().getAttribute("quantity")%></span>
+									<%} %>
 								</div>
 								<strong class="text-uppercase">My Cart:</strong>
 								<br>
-								<span>#</span>
+								<%
+									if (request.getSession().getAttribute("cart") == null){
+								%>
+								<span>$0.00</span>
+									<%
+									}else {
+									%>
+									<span>$ <%= request.getSession().getAttribute("total")%></span>
+									<%}%>
 							</a>
 							<div class="custom-menu">
 								<div id="shopping-cart">
@@ -126,7 +152,7 @@
 									</div>
 									<div class="shopping-cart-btns">
 										<button class="main-btn">View Cart</button>
-										<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
+										<button class="primary-btn" href = "checkout.jsp">Checkout <i class="fa fa-arrow-circle-right"></i></button>
 									</div>
 								</div>
 							</div>
@@ -156,25 +182,30 @@
 				<div class="category-nav show-on-click">
 					<div class="category-nav">
 						<span class="category-header">Categories <i class="fa fa-list"></i></span>
-						<ul class="category-list">
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "beverages.jsp">Beverages<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "baking.jsp">Baking<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "breakfast.jsp">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "frozenfood.jsp">Frozen Foods<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "grain.jsp">Grains & Pasta<i class="fa fa-angle-right"></i></a>
-							</li>
-							<li class="dropdown side-dropdown">
-								<a class="dropdown-toggle" href = "produce.jsp">Produce<i class="fa fa-angle-right"></i></a>
-							</li>
+						<ul class="category-list">			
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=beverages">Beverages<i class="fa fa-angle-right"></i></a>
+								</li>
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=baking">Baking<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=breakfast">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=frozenfood">Frozen Foods<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=grain&pasta">Grains & Pasta<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=produce">Produce<i class="fa fa-angle-right"></i></a>
+								</li>
+							</form>
 						</ul>
 					</div>
 				</div>

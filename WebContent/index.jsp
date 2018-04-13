@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import = "org.elluck91.munchies.*"%>
 <html lang="en">
 
 <head>
@@ -99,6 +100,13 @@
 							</ul>
 						</li>
 						<!-- /Account -->
+						<%
+							Product p = new Product();
+							p.name = "item";
+							p.price = 10;
+							p.img = "\WebContent\img\thumb-product04.jpg";
+							session.setAttribute("products", p);
+						%>
 
 						<!-- Cart -->
 						<li class="header-cart dropdown default-dropdown">
@@ -132,11 +140,11 @@
 									<div class="shopping-cart-list">
 										<div class="product product-widget">
 											<div class="product-thumb">
-												<img src="./img/thumb-product01.jpg" alt="">
+												<img src= products.img alt="nope">
 											</div>
 											<div class="product-body">
-												<h3 class="product-price"># <span class="qty">#</span></h3>
-												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
+												<h3 class="product-price"><%= products.price%><span class="qty">#</span></h3>
+												<h2 class="product-name"><a href="#"><%= products.name %></a></h2>
 											</div>
 											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
 										</div>
@@ -185,31 +193,26 @@
 						<span class="category-header">Categories <i class="fa fa-list"></i></span>
 						<ul class="category-list">			
 								<li class="dropdown side-dropdown">
-									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=beverages">Beverages<i class="fa fa-angle-right"></i></a>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=beverages">Beverages<i class="fa fa-angle-right"></i></a>
 								</li>
 								<li class="dropdown side-dropdown">
-									<input type = "hidden" name = "baking" value = "baking"></input>
-									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=baking">Baking<i class="fa fa-angle-right"></i></a>
-								</li>
-							
-								<li class="dropdown side-dropdown">
-									<input type = "hidden" name = "breakfast" value = "breakfast"></input>
-									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=breakfast">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=baking">Baking<i class="fa fa-angle-right"></i></a>
 								</li>
 							
 								<li class="dropdown side-dropdown">
-									<input type = "hidden" name = "frozenfood" value = "frozenfood"></input>
-									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=frozenfood">Frozen Foods<i class="fa fa-angle-right"></i></a>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=breakfast">Breakfast & Cereal<i class="fa fa-angle-right"></i></a>
 								</li>
 							
 								<li class="dropdown side-dropdown">
-									<input type = "hidden" name = "grain" value = "grain"></input>
-									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=grain&pasta">Grains & Pasta<i class="fa fa-angle-right"></i></a>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=frozenfood">Frozen Foods<i class="fa fa-angle-right"></i></a>
 								</li>
 							
 								<li class="dropdown side-dropdown">
-									<input type = "hidden" name = "produce" value = "produce"></input>
-									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?=produce">Produce<i class="fa fa-angle-right"></i></a>
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=grain&pasta">Grains & Pasta<i class="fa fa-angle-right"></i></a>
+								</li>
+							
+								<li class="dropdown side-dropdown">
+									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=produce">Produce<i class="fa fa-angle-right"></i></a>
 								</li>
 							</form>
 						</ul>
