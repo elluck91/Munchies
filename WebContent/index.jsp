@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%@ page import = "org.elluck91.munchies.*"%>
 <html lang="en">
 
 <head>
@@ -99,14 +98,7 @@
 								<li><a href="./register.jsp"><i class="fa fa-user-plus"></i> Create An Account</a></li>
 							</ul>
 						</li>
-						<!-- /Account -->
-						<%
-							Product p = new Product();
-							p.name = "item";
-							p.price = 10;
-							p.img = "\WebContent\img\thumb-product04.jpg";
-							session.setAttribute("products", p);
-						%>
+						<!-- /Account -->	
 
 						<!-- Cart -->
 						<li class="header-cart dropdown default-dropdown">
@@ -140,11 +132,11 @@
 									<div class="shopping-cart-list">
 										<div class="product product-widget">
 											<div class="product-thumb">
-												<img src= products.img alt="nope">
+												<img src= "" alt="nope">
 											</div>
 											<div class="product-body">
-												<h3 class="product-price"><%= products.price%><span class="qty">#</span></h3>
-												<h2 class="product-name"><a href="#"><%= products.name %></a></h2>
+												<h3 class="product-price">price<span class="qty">#</span></h3>
+												<h2 class="product-name"><a href="#">name</a></h2>
 											</div>
 											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
 										</div>
@@ -214,10 +206,10 @@
 								<li class="dropdown side-dropdown">
 									<a class="dropdown-toggle" href = "http://localhost:8080/WebContent/CategoryAPI?category=produce">Produce<i class="fa fa-angle-right"></i></a>
 								</li>
-							</form>
 						</ul>
 					</div>
-				</div>
+				</div>	
+			</div>
 				<!-- /category nav -->
 
 				<!-- menu nav -->
@@ -230,7 +222,6 @@
 				</div>
 				<!-- menu nav -->
 			</div>
-		</div>
 		<!-- /container -->
 	</div>
 	<!-- /NAVIGATION -->
