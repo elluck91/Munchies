@@ -52,21 +52,12 @@
 					<!-- /Logo -->
 
 					<!-- Search -->
-					<div class="header-search">
-						<form>
-							<input class="input search-input" type="text" placeholder="Enter your keyword">
-							<select class="input search-categories">
-								<option value="0">All Categories</option>
-								<option value="1">Beverages</option>
-								<option value="1">Baking</option>
-								<option value="1">Breakfast & Cereal</option>
-								<option value="1">Frozen Food</option>
-								<option value="1">Grains & Pasta</option>
-								<option value="1">Produce</option>
-							</select>
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-						</form>
-					</div>
+						<div class="header-search">
+							<form action = "ProductSearchAPI">
+								<input class="input" type="text" name = "product_name" placeholder="Enter your keyword">
+								<button class="search-btn" type = "submit"><i class="fa fa-search"></i></button>
+							</form>
+						</div>
 					<!-- /Search -->
 				</div>
 				<div class="pull-right">
@@ -158,7 +149,7 @@
 												</div>
 												<form action="CartAPI" method = "post">
 													<input type="hidden" value="delete" name="action">
-													<input type="hidden" value="${product.getProduct_id() }" name="product_id">
+													<input type="hidden" value="${product.getProduct_id() }" name="product_id">											
 													<input name="page" type="hidden" value="product">
 													<button class="cancel-btn" type = "submit"><i class="fa fa-trash"></i></button>
 												</form>
@@ -297,6 +288,8 @@
 									<input name = "product_id" type = "hidden" value ="${product.product_id}">
 									<span class="text-uppercase">QTY: </span>
 									<input name = "count" class="input" type="number" value = "1">
+									<input name="page" type="hidden" value="product">
+									<input name="action" type="hidden" value="add">
 								</div>
 							</div>
 							<div class="product-btns">
