@@ -34,13 +34,14 @@ public class ProductSearchAPI extends HttpServlet {
 		String searchTerm;
 		
 		if ((searchTerm = request.getParameter("product_name")) != null) {
-			System.out.println("searching for products");
+			System.out.println("searching for products: " + searchTerm);
 			ArrayList<Product> products = new ArrayList<Product>();
 			DbManager db = new DbManager();
 			
 			products = db.productSearch(searchTerm);
 			
 			request.setAttribute("searchedProducts", products);
+			request.setAttribute("search_term", searchTerm);
 			RequestDispatcher requestDispatcher; 
 			requestDispatcher = request.getRequestDispatcher("/productSearch_info.jsp");
 			requestDispatcher.forward(request, response);

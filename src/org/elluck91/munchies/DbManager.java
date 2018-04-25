@@ -46,9 +46,6 @@ public class DbManager implements IRepo{
 
 			res.next();
 
-			System.out.println("Result: " + res.getInt(1));
-
-
 			return res.getInt(1);
 
 		} catch (SQLException ex) {
@@ -77,7 +74,6 @@ public class DbManager implements IRepo{
 			Class.forName("com.mysql.jdbc.Driver");
 			//con  = DriverManager.getConnection("jdbc:mysql://localhost/Students","cmpe133","cmpe133_Spring2018!");
 			con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","elluck91","blank");
-			System.out.println("Connected with the DB.");
 			PreparedStatement sql = con.prepareStatement("INSERT INTO users VALUES(?,sha2(?, 256),?,?,?)");
 			sql.setString(1, user.username);
 			sql.setString(2, user.password);
@@ -177,7 +173,6 @@ public class DbManager implements IRepo{
 
 
 	public Transaction getTransactionDetails(String transaction) {
-		System.out.println("Transaction id: " + transaction);
 		Transaction result = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -192,12 +187,9 @@ public class DbManager implements IRepo{
 				result = new Transaction(res.getInt("transaction_id"), res.getString("transaction_products"),
 						res.getDate("transaction_date"), res.getDouble("transaction_total"));
 				productList = res.getString("transaction_products").split(",");
-				System.out.println("List of products: " + productList);
 				for (String product : productList) {
-					System.out.println("Product:" + product);
 					prod = getProduct(product);
 					if (prod != null) {
-						System.out.println("Adding a product.");
 						result.addProduct(prod);
 					}		
 				}
@@ -215,7 +207,6 @@ public class DbManager implements IRepo{
 
 
 	public Product getProduct(String product_id) {
-		System.out.println("Product id: " + product_id);
 		Product product = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -226,7 +217,6 @@ public class DbManager implements IRepo{
 			ResultSet res = sql.executeQuery();
 			
 			while (res.next()) {
-				System.out.println("Found a product");
 				product = new Product(res.getString("product_uniquename"), res.getString("product_name"),
 						res.getDouble("product_price"), res.getString("product_description"),
 						res.getString("product_img"), res.getString("product_category"), res.getInt("product_id"));
@@ -242,7 +232,6 @@ public class DbManager implements IRepo{
 			e.printStackTrace();
 		}
 		
-		System.out.println(product.toString());
 		return product;
 	}
 
@@ -252,7 +241,6 @@ public class DbManager implements IRepo{
 
 			Class.forName("com.mysql.jdbc.Driver");
 			con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","elluck91","blank");
-			System.out.println("Connected with the DB.");
 			PreparedStatement sql = con.prepareStatement("INSERT INTO transaction VALUES(?,?,?,?)");
 			sql.setInt(1, transaction.getTransaction_id());
 			sql.setDate(2, transaction.getDate());
@@ -290,7 +278,6 @@ public class DbManager implements IRepo{
 			String transactionList = "";
 			ResultSet res = sql.executeQuery();
 			
-			System.out.println("Query complete.");
 			while (res.next()) {
 			    transactionList += res.getString("transactions");
 				
@@ -315,7 +302,6 @@ public class DbManager implements IRepo{
 
 
 	public ArrayList<Product> getCategoryProducts(String category) {
-		System.out.println("Category: " + category);
 		ArrayList<Product> productList = new ArrayList<Product>();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -324,10 +310,8 @@ public class DbManager implements IRepo{
 			sql.setString(1, category);
 
 			ResultSet res = sql.executeQuery();
-			System.out.println("Query complete.");
 			Product product;
 			while (res.next()) {
-				System.out.println("Found a product");
 				product = new Product(res.getString("product_uniquename"), res.getString("product_name"),
 						res.getDouble("product_price"), res.getString("product_description"),
 						res.getString("product_img"), res.getString("product_category"), res.getInt("product_id"));
@@ -344,7 +328,6 @@ public class DbManager implements IRepo{
 			e.printStackTrace();
 		}
 		
-		System.out.println(productList.toString());
 		return productList;
 	}
 	
@@ -361,7 +344,6 @@ public class DbManager implements IRepo{
 			ResultSet res = sql.executeQuery();
 			
 			while (res.next()) {
-				System.out.println("Found products");
 				product = new Product(res.getString("product_uniquename"), res.getString("product_name"),
 						res.getDouble("product_price"), res.getString("product_description"),
 						res.getString("product_img"), res.getString("product_category"), res.getInt("product_id"));
@@ -378,7 +360,6 @@ public class DbManager implements IRepo{
 			e.printStackTrace();
 		}
 		
-		System.out.println(searchedProducts.toString());
 		return searchedProducts;
 	}
 

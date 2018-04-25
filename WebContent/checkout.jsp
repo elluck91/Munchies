@@ -161,6 +161,7 @@
 												<form action="CartAPI" method = "post">
 													<input type="hidden" value="delete" name="action">
 													<input type="hidden" value="${product.getProduct_id() }" name="product_id">
+													<input name="page" type="hidden" value="checkout">
 													<button class="cancel-btn" type = "submit"><i class="fa fa-trash"></i></button>
 												</form>
 											</div>

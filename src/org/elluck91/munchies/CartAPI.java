@@ -39,22 +39,15 @@ public class CartAPI extends HttpServlet {
 		DbManager db = new DbManager();
 		Cart cart;
 		String param = request.getParameter("action");
+		
 		if (param != null && param.equals("delete")) {
 			if ((cart = (Cart) session.getAttribute("cart")) != null) {
 				cart.removeProductFromCart(request.getParameter("product_id"));
 			}
-			
-			if (request.getParameter("page").equals("checkout"))
-				response.sendRedirect("./checkout.jsp");
-			else if (request.getParameter("page").equals("index"))
-				response.sendRedirect("./index.jsp");
-			else if (request.getParameter("page").equals("category"))
-				response.sendRedirect("./CategoryAPI?category=" + request.getParameter("category"));
-			else if (request.getParameter("page").equals("product"))
-				response.sendRedirect("./ProductAPI?product_id=" + request.getParameter("product_id"));
 				
 		}
-		else {
+		else if (param != null && param.equals("add")){
+			System.out.println("Adding");
 			Product product = db.getProduct(request.getParameter("product_id"));
 			String count = request.getParameter("count");
 			product.setProduct_quantity(Integer.parseInt(count));
@@ -67,19 +60,25 @@ public class CartAPI extends HttpServlet {
 				cart.addProductToCart(product, count);
 				session.setAttribute("cart", cart);
 			}
-			
-			if (param != null && param.equals("category")) {
-				System.out.println("Category: " + request.getParameter("category"));
-				response.sendRedirect("./CategoryAPI?category=" + request.getParameter("category"));
-			}
-			else
-				response.sendRedirect("./ProductAPI?product_id=" + request.getParameter("product_id"));
 		}
 		
-		
-		
-		
-		
+		if (request.getParameter("page").equals("checkout"))
+			response.sendRedirect("./checkout.jsp");
+		else if (request.getParameter("page").equals("index"))
+			response.sendRedirect("./index.jsp");
+		else if (request.getParameter("page").equals("category"))
+			response.sendRedirect("./CategoryAPI?category=" + request.getParameter("category"));
+		else if (request.getParameter("page").equals("product"))
+			response.sendRedirect("./ProductAPI?product_id=" + request.getParameter("product_id"));
+		else if (request.getParameter("page").equals("productSearch")) {
+			response.sendRedirect("./ProductSearchAPI?product_name=" + request.getParameter("searched_term"));
+		}
+		else if (request.getParameter("page").equals("login")) {
+			response.sendRedirect("./login.jsp");
+		}
+		else if (request.getParameter("page").equals("transaction")) {
+			response.sendRedirect("./TransactionAPI?username=" + request.getParameter("username"));
+		}
 	}
 
 }

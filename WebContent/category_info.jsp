@@ -317,7 +317,8 @@
 												<input type = "hidden" name = "product_id" value = "${record.product_id}">
 												<input name = "count" class="input" type="hidden" value = "1">
 												<input name="category" type="hidden" value="${category}">
-												<input name="action" type="hidden" value="category">
+												<input name="page" type="hidden" value="category">
+												<input name="action" type="hidden" value="add">
 												<div class="product-btn|s">
 													<button name = "Add" class="primary-btn add-to-cart" type = "submit"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 												</div>

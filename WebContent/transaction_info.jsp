@@ -163,6 +163,8 @@
 												<form action="CartAPI" method = "post">
 													<input type="hidden" value="delete" name="action">
 													<input type="hidden" value="${product.getProduct_id() }" name="product_id">
+													<input name="username" type="hidden" value="${userid}">
+													<input name="page" type="hidden" value="transaction">
 													<button class="cancel-btn" type = "submit"><i class="fa fa-trash"></i></button>
 												</form>
 											</div>
@@ -309,7 +311,17 @@
 											<td class="qty text-center">
 											<c:forEach items = "${record.getProductList()}" var = "product">	
 												<a href = "./ProductAPI?product_id=${product.product_id}"><c:out value = "${product.getProduct_uniquename()}"/></a>
-												<a href = "./CartAPI?product_id=${product.getProduct_id()}&count=1">Add to Cart</a>
+												
+												<form action = "CartAPI" method = "post">
+												<input type = "hidden" name = "product_id" value = "${product.product_id}">
+												<input name = "count" class="input" type="hidden" value = "1">
+												<input name="username" type="hidden" value="${userid}">
+												<input name="page" type="hidden" value="transaction">
+												<input name="action" type="hidden" value="add">
+												<div class="product-btn|s">
+													<button name = "Add" class="button-class" type = "submit"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+												</div>
+											</form>
 												<br/>				
 											</c:forEach>
 											</td>
