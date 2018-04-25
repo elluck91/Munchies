@@ -43,6 +43,16 @@ public class CartAPI extends HttpServlet {
 			if ((cart = (Cart) session.getAttribute("cart")) != null) {
 				cart.removeProductFromCart(request.getParameter("product_id"));
 			}
+			
+			if (request.getParameter("page").equals("checkout"))
+				response.sendRedirect("./checkout.jsp");
+			else if (request.getParameter("page").equals("index"))
+				response.sendRedirect("./index.jsp");
+			else if (request.getParameter("page").equals("category"))
+				response.sendRedirect("./CategoryAPI?category=" + request.getParameter("category"));
+			else if (request.getParameter("page").equals("product"))
+				response.sendRedirect("./ProductAPI?product_id=" + request.getParameter("product_id"));
+				
 		}
 		else {
 			Product product = db.getProduct(request.getParameter("product_id"));

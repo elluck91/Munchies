@@ -367,6 +367,7 @@
 											<form id="checkout-form" class="clearfix" action = "CartAPI" method = "post">
 												<input type="hidden" name="product_id" value="${product.getProduct_id() }">
 												<input type="hidden" name="action" value="delete">
+												<input type="hidden" name="page" value="checkout">
 												<td class="text-right"><button type="submit" class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
 											</form>
 										</tr>
