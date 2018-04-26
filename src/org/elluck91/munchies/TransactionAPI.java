@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -87,21 +88,32 @@ public class TransactionAPI extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Here");
 		DbManager db = new DbManager();
-		String username = (String) request.getSession().getAttribute("username");
-		int transaction_id = (int) request.getSession().getAttribute("transaction_id");
-		String productList = (String) request.getSession().getAttribute("product_list");
-		Date date = (Date) request.getSession().getAttribute("date");
-		Double totalSum = (Double) request.getSession().getAttribute("totalSum");
+		String username = (String) request.getParameter("username");
+		System.out.println("Username: " + username);
+		if (username.equals("")) {
+			request.setAttribute("cart", new Cart());
+		}
+		else {
+			int transaction_id = 1;
+			String productList = request.getParameter("productList");
+			Date date = new Date(Calendar.getInstance().getTime().getTime());
+			Double totalSum = Double.parseDouble(request.getParameter("totalSum"));
+			
+			System.out.println("String: " + username + "\ntransaction_id: " + transaction_id + "\nproductList: " + productList + "\ndate: " + date + "\ntotalSum: " + totalSum);
+			Transaction transaction = new Transaction(transaction_id, productList, date, totalSum);
+			transaction.setProductListString(productList);
+			
+			transaction_id = db.insertTransaction(transaction);
+			System.out.println("Updating user");
+			db.updateUser(username, transaction_id);
+			request.setAttribute("cart", new Cart());
+		}
 		
-		System.out.println("String: " + username + "\ntransaction_id: " + transaction_id + "\nproductList: " + productList + "\ndate: " + date + "\ntotalSum: " + totalSum);
-		Transaction transaction = new Transaction(transaction_id, productList, date, totalSum);
-		transaction.setProductListString(productList);
+		RequestDispatcher requestDispatcher; 
+		requestDispatcher = request.getRequestDispatcher("/thank_you.jsp");
+		requestDispatcher.forward(request, response);
 		
-		db.insertTransaction(transaction);
-		System.out.println("Updating user");
-		db.updateUser(username, transaction_id);
 	}
 
 }

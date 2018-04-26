@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.ArrayList, org.elluck91.munchies.Product, org.elluck91.munchies.Cart"%>
+<%@ page import="java.util.ArrayList, org.elluck91.munchies.Product" %>
+
 <html lang="en">
 
 <head>
@@ -40,18 +41,6 @@
 </head>
 
 <body>
-	<%
-	String product_ids = "";
-	
-	if (session.getAttribute("cart") != null) {
-		Cart cart = (Cart) session.getAttribute("cart");
-		for (Product p : cart.getProductList()) {
-			product_ids += p.getProduct_id() + ",";
-		}
-		session.setAttribute("product_ids", product_ids);
-	}
-		out.println(product_ids);
-	%>
 	<!-- HEADER -->
 	<header>
 		<!-- header -->
@@ -165,6 +154,8 @@
 												<form action="CartAPI" method = "post">
 													<input type="hidden" value="delete" name="action">
 													<input type="hidden" value="${product.getProduct_id() }" name="product_id">
+													<input name="username" type="hidden" value="${userid}">
+													<input name="page" type="hidden" value="transaction">
 													<button class="cancel-btn" type = "submit"><i class="fa fa-trash"></i></button>
 												</form>
 											</div>
@@ -257,143 +248,53 @@
 	<!-- /NAVIGATION -->
 
 
-	<!-- BREADCRUMB -->
-	<div id="breadcrumb">
-		<div class="container">
-			<ul class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Checkout</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /BREADCRUMB -->
-
 	<!-- section -->
 	<div class="section">
 		<!-- container -->
 		<div class="container">
 			<!-- row -->
 			<div class="row">
-				<form id="checkout-form" class="clearfix" action = "./TransactionAPI" method="post" onsubmit = "return checkforblank()">
-					<div class="col-md-6">
-						<div class="billing-details">
-							<p>Already a customer ? <a href="#">Login</a></p>
-							<div class="section-title">
-								<h3 class="title">Billing Details</h3>
-							</div>
-							<div class = "input-checkbox">
-								<tr>
-									<input type = "radio" name = "payment"><img src = "./img/Visa.jpg"></img></input>
-									<input type = "radio" name = "payment"><img src = "./img/MasterCard.png"></img></input>
-									<input type = "radio" name = "payment"><img src = "./img/discover.jpg"></img></input>
-								</tr>
-							</div>
-							<div class="form-group">
-								<input id = "card number" class="input" type="text" name="card number" placeholder="Card Number">
-							</div>
-							<div class="form-group">
-								<input id = "cardholder name" class="input" type="text" name="cardholder name" placeholder="Cardholder Name">
-							</div>
-							<div class="form-group">
-								<input id = "expiry date" class="input" type="text" name="expiry date" placeholder="Expiration date (MM/YY)">
-							</div>
-							<div class="form-group">
-								<input id = "security date" class="input" type="text" name="security code" placeholder="Security Code">
-							</div>
-							<div class="form-group">
-							
-							</div>
+				<!-- ASIDE -->
+				
+				<!-- /ASIDE -->
+
+				<!-- MAIN -->
+				<div id="main" class="col-md-9">
+					<!-- store top filter -->
+					<div class="store-filter clearfix">
+						<div class="pull-left">
+						</div>
+						<div class="pull-right">
 						</div>
 					</div>
-					<div class="col-md-12">
+					<!-- /store top filter -->
+
+					<!-- STORE -->
+								<div class="col-md-12">
 						<div class="order-summary clearfix">
 							<div class="section-title">
-								<h3 class="title">Order Review</h3>
+								<h3 class="title">Thanks! Your order has been placed.</h3>
 							</div>
-							<table class="shopping-cart-table table">
-								<thead>
-									<tr>
-										<th>Product</th>
-										<th></th>
-										<th class="text-center">Price</th>
-										<th class="text-center">Quantity</th>
-										<th class="text-center">Total</th>
-										<th class="text-right"></th>
-									</tr>
-								</thead>
-								<tbody>
-									<%
-										if(session.getAttribute("cart") != null) {
-									%>
-									
-									
-									<c:forEach items="${cart.getProductList()}" var="product">
-										<tr>
-											<td class="thumb"><img src="${product.getProduct_img()}" alt=""></td>
-											<td class="details">
-												<a href="#"><c:out value = "${product.getProduct_uniquename()}"/></a>
-											</td>
-											<td class="price text-center"><strong>$<c:out value = "${product.getProduct_price()}"/></strong><br></td>
-											<td class="qty text-center"><input class="input" type="number" value = "${product.getProduct_quantity()}"></td>
-											<td class="total text-center"><strong class="primary-color">$<c:out value = "${product.getProduct_price()*product.getProduct_quantity()}"/></strong></td>
-											<td class="text-right"><button class="main-btn icon-btn"><i class="fa fa-close"></i></button></td>
-										</tr>
-										</tbody>
-									</c:forEach>
-										<tfoot>
-											<tr>
-												<th class="empty" colspan="3"></th>
-												<th>SUBTOTAL</th>
-												<th colspan="2" class="sub-total">$<c:out value = "${total}"/></th>
-											</tr>
-											<tr>
-												<th class="empty" colspan="3"></th>
-												<th>SHIPING</th>
-												<td colspan="2"><c:out value = "${param.shipping}"/></td>
-											</tr>
-											<tr>
-												<th class="empty" colspan="3"></th>
-												<th>TOTAL</th>
-												<th colspan="2" class="total">$<c:out value = "${total}"/></th>
-											</tr>
-										</tfoot>
-									<%
-										}else{
-									%>
-									<tr>
-										<h2>Empty Cart</h2>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<th class="empty" colspan="3"></th>
-										<th>SUBTOTAL</th>
-										<th colspan="2" class="sub-total">$0.00</th>
-									</tr>
-									<tr>
-										<th class="empty" colspan="3"></th>
-										<th>SHIPING</th>
-										<td colspan="2">Free Shipping</td>
-									</tr>
-									<tr>
-										<th class="empty" colspan="3"></th>
-										<th>TOTAL</th>
-										<th colspan="2" class="total">$0.00</th>
-									</tr>
-								</tfoot>
-								<%}%>
-							</table>
 							<div class="pull-right">
-							
-								<input type="hidden" name="productList" value="${product_ids }">
-								<input type="hidden" name="username" value="${userid}">
-								<input type="hidden" name="totalSum" value="${total}">
-								<button class="primary-btn" type="submit">Place Order</button>
+							<!--	<button class="primary-btn">Checkout</button>-->
 							</div>
 						</div>
 
 					</div>
-				</form>
+					<!-- /STORE -->
+
+					<!-- store bottom filter -->
+					<div class="store-filter clearfix">
+						<div class="pull-left">
+
+						</div>
+						<div class="pull-right">
+							
+						</div>
+					</div>
+					<!-- /store bottom filter -->
+				</div>
+				<!-- /MAIN -->
 			</div>
 			<!-- /row -->
 		</div>
@@ -481,31 +382,6 @@
 		<!-- /container -->
 	</footer>
 	<!-- /FOOTER -->
-	
-	<script type = "text/javascript">
-	function checkforblank(){
-		
-		var errormessage = "";
-	if(document.getElementById('card number').value == ""){
-			errormessage += "Card number is required \n";
-		}
-		if(document.getElementById('cardholder name').value == "" || document.getElementById('email').value.includes("@")){
-			errormessage += "Cardholder name is required \n";
-		}
-		if(document.getElementById('expiry date').value == ""){
-			errormessage += "Expiry date is required \n";
-		}
-		if(document.getElementById('security date').value == ""){
-			errormessage += "Security is required \n";
-		}
-		if(errormessage != ""){
-			alert(errormessage);
-			return false;
-		}
-	
-			
-	}
-	</script>
 
 	<!-- jQuery Plugins -->
 	<script src="js/jquery.min.js"></script>

@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.mysql.jdbc.Statement;
+
 /**
  *
  * @author elluck91
@@ -236,20 +238,19 @@ public class DbManager implements IRepo{
 	}
 
 
-	public void insertTransaction(Transaction transaction) {
+	public int insertTransaction(Transaction transaction) {
+		int transaction_id = 0;
 		try {
-
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			con  = DriverManager.getConnection("jdbc:mysql://localhost/munchies","elluck91","blank");
-			PreparedStatement sql = con.prepareStatement("INSERT INTO transaction VALUES(?,?,?,?)");
-			sql.setInt(1, transaction.getTransaction_id());
-			sql.setDate(2, transaction.getDate());
-			sql.setDouble(3, transaction.getTotalSum());
-			sql.setString(4, transaction.getProductListString());
-			sql.execute();
-			
-			
-
+			PreparedStatement sql = con.prepareStatement("INSERT INTO transaction VALUES(NULL,NOW(),?,?)", Statement.RETURN_GENERATED_KEYS);
+			sql.setDouble(1, transaction.getTotalSum());
+			sql.setString(2, transaction.getProductListString());
+			sql.executeUpdate();
+			ResultSet res = sql.getGeneratedKeys();
+			if (res.next())
+				transaction_id = res.getInt(1);
 		} catch (SQLException ex) {
 			Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, "ex happened !!!", ex);
 		} catch (ClassNotFoundException ex) {
@@ -263,6 +264,8 @@ public class DbManager implements IRepo{
 				Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
 			}
 		}
+		
+		return transaction_id;
 		
 	}
 
